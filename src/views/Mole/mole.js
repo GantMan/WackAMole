@@ -18,18 +18,22 @@ export default class Mole extends Component {
   }
 
   handlePressIn = () => {
-    Animated.spring(this.state.animatedSize, {
-      toValue: 1.50,
-      useNativeDriver: true
-    }).start()
     if (this.props.active) this.setState({currentImage: hit})
   }
 
   handlePressOut = () => {
-    Animated.spring(this.state.animatedSize, {
-      toValue: 1,
-      useNativeDriver: true
-    }).start()
+    Animated.sequence([
+      Animated.timing(this.state.animatedSize, {
+        toValue: 1.3,
+        duration: 50,
+        useNativeDriver: true
+      }),
+      Animated.timing(this.state.animatedSize, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true
+      })
+    ]).start()
     if (this.props.active) this.setState({currentImage: struck})
   }
 
