@@ -17,12 +17,11 @@ export default class Mole extends Component {
   }
 
   handlePressIn = () => {
-    this.setState({currentImage: hit})
-    // this.setState()
+    if (this.props.active) this.setState({currentImage: hit})
   }
 
   handlePressOut = () => {
-    this.setState({currentImage: struck})
+    if (this.props.active) this.setState({currentImage: struck})
   }
 
   render () {
