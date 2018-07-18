@@ -3,33 +3,36 @@ import { View, Image, TouchableWithoutFeedback } from 'react-native'
 
 const hole = require('./img/hole.png')
 const mole = require('./img/idle.png')
+const hit = require('./img/hit.png')
 const struck = require('./img/done.png')
 
 export default class Mole extends Component {
 
   constructor (props) {
     super(props)
-    this.state = {...props, struck: false}
+    this.state = {
+      ...props,
+      currentImage: props.active ? mole : hole
+    }
   }
 
-  hit = () => {
-    this.setState({struck: true})
+  handlePressIn = () => {
+    this.setState({currentImage: hit})
+    // this.setState()
   }
 
-  moleImage = () => {
-    return this.state.active
-    ? this.state.struck
-      ? struck
-      : mole
-    : hole
+  handlePressOut = () => {
+    this.setState({currentImage: struck})
   }
 
   render () {
-    const moleImage = this.moleImage()
     return (
       <View style={styles.GrassPatch}>
-        <TouchableWithoutFeedback onPress={this.hit}>
-          <Image source={moleImage} />
+        <TouchableWithoutFeedback
+          onPressIn={this.handlePressIn}
+          onPressOut={this.handlePressOut}
+        >
+          <Image source={this.state.currentImage} />
         </TouchableWithoutFeedback>
       </View>
     )
@@ -40,6 +43,6 @@ const styles = {
   GrassPatch: {
     // Code to stop pixel jerk
     justifyContent: 'flex-end',
-    minHeight: 111
+    minHeight: 115
   }
 }
