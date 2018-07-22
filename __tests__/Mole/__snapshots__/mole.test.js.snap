@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Active Mole Press 1`] = `
+Object {
+  "active": true,
+  "currentImage": Object {
+    "testUri": "../../../src/views/Mole/img/hit.png",
+  },
+}
+`;
+
+exports[`Snapshot of active 1`] = `
+<View
+  style={
+    Object {
+      "justifyContent": "flex-end",
+      "minHeight": 115,
+    }
+  }
+>
+  <Image
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "testUri": "../../../src/views/Mole/img/idle.png",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Snapshot of default shape 1`] = `
+<View
+  style={
+    Object {
+      "justifyContent": "flex-end",
+      "minHeight": 115,
+    }
+  }
+>
+  <Image
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "testUri": "../../../src/views/Mole/img/hole.png",
+      }
+    }
+  />
+</View>
+`;
