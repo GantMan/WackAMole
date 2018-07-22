@@ -1,16 +1,14 @@
-import React from 'react'
-import { View, FlatList } from 'react-native'
-import Mole from '../Mole/mole'
+import React from "react"
+import { View, FlatList } from "react-native"
+import Mole from "../Mole/mole"
 
-const grass = '#11991e'
+const grass = "#11991e"
 
-const renderHole = ({item}) => {
-  return (
-    <Mole {...item} />
-  )
+const renderHole = ({ item }) => {
+  return <Mole {...item} />
 }
 
-export default (props) =>
+export default props => (
   <View style={styles.container}>
     <FlatList
       data={props.moles || []}
@@ -21,19 +19,20 @@ export default (props) =>
       numColumns={3}
     />
   </View>
+)
 
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: grass
+    backgroundColor: grass,
   },
   list: {
-    padding: 20
+    padding: 20,
   },
   listContainer: {
     // Take full space with flex 1
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  }
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
 }
