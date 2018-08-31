@@ -4,8 +4,6 @@ import renderer from 'react-test-renderer'
 
 test('Inactive Mole Press', () => {
   const moleInstance = renderer.create(<Mole />).getInstance()
-  // console.log(moleInstance.state)
-  moleInstance.state.currentImage.testUri.includes('hole')
   moleInstance.handlePressIn()
   expect(moleInstance.state.currentImage.testUri).toContain('hole')
 })
